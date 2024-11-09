@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IceMiner - BERK Mining App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Sign Up / Login Section -->
+        <div id="auth-section" class="section active">
+            <div class="container">
+                <h1><i class="fas fa-gem"></i> IceMiner</h1>
+                <div class="form-group">
+                    <input type="text" id="username" placeholder="Username" class="input">
+                    <input type="text" id="bon-wallet" placeholder="BON Wallet ID" class="input">
+                </div>
+                <button id="signup-btn" class="btn"><i class="fas fa-user-plus"></i> Sign Up</button>
+                <button id="login-toggle" class="btn secondary"><i class="fas fa-sign-in-alt"></i> Already have an account?</button>
+            </div>
+        </div>
+
+        <!-- Home Section -->
+        <div id="home-section" class="section">
+            <div class="container">
+                <div class="user-info">
+                    <h2><i class="fas fa-user"></i> <span id="display-username"></span></h2>
+                    <p class="wallet-id"><i class="fas fa-wallet"></i> <span id="display-wallet"></span></p>
+                </div>
+
+                <div class="mining-stats">
+                    <div class="balance-box">
+                        <h3>BERK Balance</h3>
+                        <p id="berk-balance">0.000000000</p>
+                        <small>Mining Rate: 0.000000014 BERK/s</small>
+                    </div>
+                </div>
+
+                <div class="withdrawal-section">
+                    <h3><i class="fas fa-money-bill-transfer"></i> Withdrawal</h3>
+                    <p class="min-withdraw">Minimum: 100 BERKS</p>
+                    <input type="number" id="withdraw-amount" placeholder="Amount to withdraw" class="input">
+                    <button id="withdraw-btn" class="btn"><i class="fas fa-paper-plane"></i> Withdraw</button>
+                </div>
+
+                <div id="transaction-code-container" class="hidden">
+                    <h4>Transaction Code</h4>
+                    <textarea id="transaction-code" readonly></textarea>
+                    <button onclick="copyTransactionCode()" class="btn secondary">
+                        <i class="fas fa-copy"></i> Copy Code
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
