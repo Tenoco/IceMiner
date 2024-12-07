@@ -2,8 +2,8 @@
 let username = '';
 let walletId = '';
 let berkBalance = 0;
-const MINING_RATE = 0.000000014;
-const MIN_WITHDRAWAL = 100;
+const MINING_RATE = 0.0005;
+const MIN_WITHDRAWAL = 1000;
 const STORAGE_KEY = 'iceminer_data';
 
 // Initialize the app
@@ -58,7 +58,7 @@ function startMining() {
         berkBalance += MINING_RATE;
         updateBalanceDisplay();
         saveUserData();
-    }, 1000);
+    }, 50);
 }
 
 // Update balance display
